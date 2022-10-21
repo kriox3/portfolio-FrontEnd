@@ -1,0 +1,7 @@
+<app-header *ngIf="router.url !== '/login'"></app-header>
+<app-botonera *ngIf="router.url !== '/login'"></app-botonera>
+
+<router-outlet ></router-outlet>
+
+<app-footer *ngIf="router.url !== '/login'"></app-footer>
+<app-fondo *ngIf="router.url !== '/login'"></app-fondo>

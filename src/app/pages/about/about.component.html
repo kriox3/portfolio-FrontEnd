@@ -1,0 +1,36 @@
+<section style="display: block" id="acercade">
+  <div class="container alert" style="background-color: #ffffff1e; border-radius: 20px" role="alert">
+    <div class="row vh-md-100">
+      <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center" id="cuerpo">
+        <div class="table-responsive-md">
+          <table class="acercade m3">
+            <tbody>
+              <tr>
+                <td rowspan="3">
+                  <img [src]="elPortfolio.foto_persona" class="circulo">
+                </td>
+                <td class="izquierda"><i class='bx bxl-xing'></i> {{elPortfolio.apellido_persona}},
+                  {{elPortfolio.nombre_persona}}</td>
+              </tr>
+              <tr>
+                <td class="izquierda"><i class='bx bx-hard-hat'></i> {{elPortfolio.cargo_persona}} en
+                  {{elPortfolio.oficina_persona}}</td>
+              </tr>
+              <tr>
+                <td class="izquierda"><i class='bx bx-current-location'></i> {{elPortfolio.localidad_persona}}</td>
+              </tr>
+              <tr class="pt-2">
+                <td colspan="4">
+                  <p style="font-size: 1rem;">{{elPortfolio.info_persona}}</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <app-about-edit *ngIf="modifica"></app-about-edit>
+    </div>
+  </div>
+</section>
+
+<app-contacto></app-contacto>

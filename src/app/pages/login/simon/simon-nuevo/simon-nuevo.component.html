@@ -1,0 +1,75 @@
+<button type="button" class="btn botonito mt-3 centrarlo" style="display: flex; margin:auto" (click)="onNewModal()"
+    *ngIf="!usersNewModalOn">
+    <!-- data-bs-toggle="modal"
+        data-bs-target="#modelAgregarContacto"> -->
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Agregar más
+</button>
+
+<!-- Modal -->
+<div id="modelAgregarContacto" tabindex="-999" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true"
+    *ngIf="usersNewModalOn">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content fondo-oscuro text-light">
+            <div class="modal-header">
+                <h5 class="modal-title text-light">Agregar Educacion</h5>
+                <button type="button" class="btn botonito" (click)="onNewModalOff()">
+                    <!-- class="btn-close" data-bs-dismiss="modal" aria-label="Close"  -->X
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+
+                    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+
+
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nombreUsuario">Usuario</label>
+                            <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario"
+                                [(ngModel)]="nombreUsuario" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="roles">Rol</label>
+                           <!--  <input type="text" class="form-control" id="roles" name="roles" [(ngModel)]="roles"
+                                required> -->
+                        </div>
+
+                        <select  class="form-control" name="rol" id="rol" [(ngModel)]="rol"  required>
+                            <option [ngValue]="null" disabled>Elegi el Rol:</option>
+                            <option value="user" selected>Usuario</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+
+                        <button type="submit" class="btn botonito centrarlo my-2"
+                            style="display: flex; margin:auto; filter: hue-rotate(0deg);"
+                            [disabled]="!f.valid">Guardar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

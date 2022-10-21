@@ -1,0 +1,24 @@
+<section style="display: block" id="contacto">
+  <div class="container alert" style="background-color: #ffffff1e; border-radius: 20px" role="alert">
+    <div class="row vh-md-100">
+      <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center" id="cuerpo">
+
+
+        <table class="mx-auto">
+          <tbody>
+            <tr class="row" style="margin:auto">
+              <td *ngFor="let dato of listaContacto" class="col-2" style="margin:auto">
+                <a [href]="dato.accesoUrl" class="mx-4" target="_blank"><i
+                    [ngClass]="getRed(dato.red.red)+' bx bx-tada bx-lg bx-burst-hover'" style="color:#0dcaf0"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <app-contacto-listar *ngIf="modifica"></app-contacto-listar>
+
+      </div>
+
+    </div>
+  </div>
+</section>

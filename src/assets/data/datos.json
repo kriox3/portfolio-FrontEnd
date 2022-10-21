@@ -1,0 +1,108 @@
+{
+    "acercade": {
+        "nombre": "Cuervo Mauro Ezequiel",
+        "cargo": "Tecnico Informatico",
+        "foto": "https://yt3.ggpht.com/ytc/AMLnZu9R8YatEJt-Jlaa2aLVZvF87MLibLjyha16eD58Exs=s900-c-k-c0x00ffffff-no-rj",
+        "oficina": "I.N.T.I.",
+        "localidad": "Buenos Aires, La Plata",
+        "info": "Bienvenidos a mi porfolio creado como modelo para ARGENTINA PROGRAMA #YoProgramo 03.22. Abajo pueden encontrar mis redes si desean contactarme y en la botonera superior algunos de los estudios y cursos realizados durante mi vida ademas de algunos de mis proyectos."
+    },
+    "educacion": [
+        {
+            "establecimiento": "Escuela Agropecuaria General Lucio Mansilla",
+            "titulo": "Tecnico Agropecuario",
+            "fecha": "2004"
+        },
+        {
+            "establecimiento": "Instituto Superior N° 12",
+            "titulo": "Tecnico Superior en Analisis",
+            "fecha": "2022"
+        }
+    ],
+    "certificaciones": [
+        {
+            "establecimiento": "Argentina Programa - Ministerio de Desarrollo Productivo",
+            "titulo": "FullStack Junior",
+            "fecha": "2023"
+        },
+        {
+            "establecimiento": "Udemy",
+            "titulo": "Alguna cosa de udemy",
+            "fecha": "2022"
+        }
+    ],
+    "habilidades": [
+        {
+            "nombre": "C# Razor",
+            "porcentaje": "82"
+        },
+        {
+            "nombre": "Java / Android",
+            "porcentaje": "60"
+        },
+        {
+            "nombre": "HTML5",
+            "porcentaje": "90"
+        },
+        {
+            "nombre": "CSS",
+            "porcentaje": "80"
+        },
+        {
+            "nombre": "Javascript",
+            "porcentaje": "90"
+        }
+    ],
+    "experiencia": [
+        {
+            "establecimiento": "Tsidkenu Producciones",
+            "ocupacion": "Director Operativo",
+            "desde": "2019",
+            "hasta": "actualidad"
+        },
+        {
+            "establecimiento": "Particular",
+            "ocupacion": "Tecnico Informatico",
+            "desde": "2015",
+            "hasta": "actualidad"
+        },
+        {
+            "establecimiento": "I.N.T.I.",
+            "ocupacion": "Desarrollador",
+            "desde": "2021",
+            "hasta": "actualidad"
+        }
+    ],
+    "proyectos": [
+        {
+            "nombre": "Pragmateia",
+            "fecha": "2020 en adelante",
+            "informacion": "Programa de control de stock y manejo de ventas, version escritorio y sus posteriores webapps",
+            "boton": "https://pragmateia.ga/"
+        },
+        {
+            "nombre": "200OK Espiame el host",
+            "fecha": "2019 en adelante",
+            "informacion": "Programa de analisis de encabezados HTTP, version escritorio y su posterior version android bajo el nombre de 'Consultame el host' por una disputa con google",
+            "boton": ""
+        },
+        {
+            "nombre": "Tsidkenu Producciones",
+            "fecha": "2019 en adelante",
+            "informacion": "Emprendimiento empresarial, para desarrollo de soluciones informaticas para PyMEs",
+            "boton": "http:/tsid.ga/"
+        }
+    ],
+    "redes": {
+        "facebook": "https://fb.me/Tsidkenu.ProduccionesOK/",
+        "instagram": "https://www.instagram.com/tsidkenuprods/",
+        "telegram": "https://t.me/tsidkenuBot/",
+        "whatsapp": "https://wa.me/542215113389/",
+        "youtube": "https://www.youtube.com/channel/UC9ntANrMdN-Jdyb0nQVdxLg",
+        "twitter": "https://twitter.com/tsidkenuprods",
+        "cafecito": "https://cafecito.app/kriox3",
+        "linkedin": "https://ar.linkedin.com/in/kriox3",
+        "web": "http://tsid.ga/"
+    }
+    
+}

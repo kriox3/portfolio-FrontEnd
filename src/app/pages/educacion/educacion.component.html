@@ -1,0 +1,42 @@
+<section style="display: block" id="educacion">
+  <div class="container alert" style="background-color: #ffffff1e; border-radius: 20px" role="alert">
+    <div class="row vh-md-100">
+      <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center" id="cuerpo">
+        <h1 class="heading-black text-light">
+          Educacion
+        </h1>
+        <div class="table-responsive-md">
+          <table class="table table table-hover text-light">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Establecimiento</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Finalizado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let dato of listaEducacion; let i= index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{dato.establecimiento}}</td>
+                <td>{{dato.titulo}}</td>
+                <td>
+                  <input type="date" disabled class="text-center text-light"
+                    style="background: transparent; border: none" placeholder="dd/mm/yyyy" value="{{dato.fecha}}">
+                </td>
+                <td *ngIf="dato.completado; else elseBlock">Si</td>
+                <ng-template #elseBlock>
+                  <td>No</td>
+                </ng-template>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <app-educacion-listar *ngIf="modifica"></app-educacion-listar>
+
+    </div>
+  </div>
+</section>

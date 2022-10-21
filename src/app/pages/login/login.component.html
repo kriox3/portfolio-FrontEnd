@@ -1,0 +1,49 @@
+<div class="container centrarlo" style="height: 100%; width:100%;" id="iniciarSesion" tabindex="-1" role="dialog"
+  aria-labelledby="iniciarSesionLabel">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background-color: #404040; color: white">
+      <div class="modal-body">
+        <form [formGroup]="form" (ngSubmit)="onLogin()" #f="ngForm" novalidate>
+          <img src="/assets/img/APlogo.png" alt="" width="200" (dblclick)="onSecret($event)"/>
+          <div class="form-floating">
+            <input type="email" formControlName="email" class="form-control" id="floatingInput"
+              [(ngModel)]="nombreUsuario" required>
+            <label for="floatingInput" class="text-dark">Usuario</label>
+          </div>
+          <div *ngIf="Mail?.errors  && Mail?.touched">
+            <p *ngIf="Mail?.hasError('required')" class="error">
+              El usuario es requerido.
+            </p>
+          </div>
+          <div class="form-floating">
+            <input type="password" formControlName="password" [class.border-danger]="MailValid" class="form-control"
+              id="floatingPassword" [(ngModel)]="password" required>
+            <label for="floatingPassword" class="text-dark">Contraseña</label>
+          </div>
+
+          <div *ngIf="Password?.errors  && Password?.touched">
+            <p *ngIf="Password?.hasError('required')" class="error">
+              El password es requerido.
+            </p>
+            <p *ngIf="Password?.errors?.['minlength']" class="error">
+              El password debe ser de 4 o más caracteres.
+            </p>
+          </div>
+
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me" /> Recordame
+            </label>
+          </div>
+          <button class="w-100 btn btn-lg botonito" type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Ingresar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

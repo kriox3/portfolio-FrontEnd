@@ -1,0 +1,61 @@
+<button type="button" class="btn botonito mt-3 centrarlo" style="display: flex; margin:auto" (click)="onNewModal()"
+    *ngIf="!proyectoNewModalOn">
+    <!-- data-bs-toggle="modal"
+        data-bs-target="#modelAgregarContacto"> -->
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Agregar más
+</button>
+
+<!-- Modal -->
+<div id="modelAgregarContacto" tabindex="-999" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true"
+    *ngIf="proyectoNewModalOn">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content fondo-oscuro text-light">
+            <div class="modal-header">
+                <h5 class="modal-title text-light">Agregar Proyecto</h5>
+                <button type="button" class="btn botonito" (click)="onNewModalOff()">
+                    <!-- class="btn-close" data-bs-dismiss="modal" aria-label="Close"  -->X
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+
+                    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre"
+                                [(ngModel)]="nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="informacion">Informacion</label>
+                            <textarea type="text" rows="5" class="form-control" id="informacion" name="informacion"
+                                [(ngModel)]="informacion" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" id="fecha" name="fecha"
+                                [(ngModel)]="fecha" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="accesoUrl">Acceso Url / Boton</label>
+                            <input type="text" class="form-control" id="accesoUrl" name="accesoUrl"
+                                [(ngModel)]="accesoUrl">
+                        </div>
+
+                        <button type="submit" class="btn botonito centrarlo my-2"
+                            style="display: flex; margin:auto; filter: hue-rotate(0deg);"
+                            [disabled]="!f.valid">Guardar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

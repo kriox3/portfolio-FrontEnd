@@ -1,0 +1,48 @@
+<button type="button" class="btn botonito mt-3" (click)="onNewModal()" *ngIf="!newModalOn">
+    <!-- data-bs-toggle="modal"
+        data-bs-target="#modelAgregarContacto"> -->
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Agregar más
+    </button>
+
+<!-- Modal -->
+<div id="modelAgregarContacto" tabindex="-999" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" *ngIf="newModalOn">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content fondo-oscuro text-light">
+            <div class="modal-header">
+                <h5 class="modal-title text-light">Agregar Red</h5>
+                <button type="button" class="btn botonito" (click)="onNewModalOff()">
+                 <!-- class="btn-close" data-bs-dismiss="modal" aria-label="Close"  -->X</button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+
+                    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+                        <div class="form-group">
+                            <label for="red">Red:</label>
+
+                            <select  class="form-control" name="red" id="red" [(ngModel)]="red.id"  required>
+                                <option [ngValue]="null" disabled>Elegi la Red:</option>
+                                <option *ngFor="let red of redes" value="{{red.id}}">{{red.red}}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="accesoUrl">Url de Acceso</label>
+                            <input type="text" class="form-control" id="accesoUrl"
+                                placeholder="Url de la red con http/s" name="accesoUrl" [(ngModel)]="accesoUrl"
+                                required>
+                        </div>
+
+                        <button type="submit" class="btn botonito" style="filter: hue-rotate(0deg);" [disabled]="!f.valid">Guardar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

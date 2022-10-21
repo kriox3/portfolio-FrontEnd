@@ -1,0 +1,63 @@
+<button type="button" class="btn botonito mt-3 centrarlo" style="display: flex; margin:auto" (click)="onNewModal()"
+    *ngIf="!certificacionNewModalOn">
+    <!-- data-bs-toggle="modal"
+        data-bs-target="#modelAgregarContacto"> -->
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Agregar más
+</button>
+
+<!-- Modal -->
+<div id="modelAgregarContacto" tabindex="-999" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true"
+    *ngIf="certificacionNewModalOn">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content fondo-oscuro text-light">
+            <div class="modal-header">
+                <h5 class="modal-title text-light">Agregar Certificacion</h5>
+                <button type="button" class="btn botonito" (click)="onNewModalOff()">
+                    <!-- class="btn-close" data-bs-dismiss="modal" aria-label="Close"  -->X
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+
+                    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+
+
+                        <div class="form-group">
+                            <label for="establecimiento">Establecimiento</label>
+                            <input type="text" class="form-control" id="establecimiento" name="establecimiento"
+                                [(ngModel)]="establecimiento" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="titulo">Titulo</label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" id="fecha" name="fecha"
+                                [(ngModel)]="fecha" required>
+                        </div>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="completado" name="completado"
+                                [(ngModel)]="completado">
+                            <label class="form-check-label" for="completado">Finalizado</label>
+                        </div>
+
+                        <button type="submit" class="btn botonito centrarlo my-2"
+                            style="display: flex; margin:auto; filter: hue-rotate(0deg);"
+                            [disabled]="!f.valid">Guardar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

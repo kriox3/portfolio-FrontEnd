@@ -1,0 +1,151 @@
+<div class="cajaf">
+    <a class="btn_roundf" title="Menu Administrador" alt="Menu Administrador" style="text-decoration: none"><i
+            class="bx bx-expand-horizontal bx-md"></i></a>
+    <a class="caja1" alt="Editar" title="Editar" style="text-decoration: none" data-bs-toggle="modal"
+        data-bs-target="#modelProyecto"><i class="bx bxs-edit bx-md"></i></a>
+</div>
+
+<div class="modal fade" id="modelProyecto" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+    aria-hidden="true">
+    <div class="modal-dialog fondo-oscuro" role="document">
+        <div class="modal-content fondo-oscuro">
+            <div class="modal-header" style=" border-color: #000;">
+                <h5 class="modal-title" style="color: white;">Seleccione proyecto a modificar:</h5>
+                <div type="button" class="btn botonito" data-bs-dismiss="modal" aria-label="Close">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <i class="bx bx-x bx-sm"></i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <!-- modal -->
+                <div class="margenes" id="proyecto">
+                    <div class="mt-2 mb-4 text-white bg-dark rounded-3">
+                        <div class="container-fluid py-5">
+                            <div class="accordion" id="accordionExample"
+                                *ngFor="let proyectoes of proyectoLista; let i= index">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" [id]="'heading'+i+1">
+                                        <button class="accordion-button collapsed text-light" type="button"
+                                            data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i+1"
+                                            aria-expanded="false" [attr.aria-controls]="'collapse'+i+1">
+                                            <b>{{proyectoes.nombre}}</b>: {{proyectoes.fecha}}
+                                        </button>
+                                    </h2>
+                                    <div [id]="'collapse'+i+1" class="accordion-collapse collapse "
+                                        [attr.aria-labelledby]="'heading'+i+1" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="accordion-body editDelete my-0">
+
+                                                <div class="accordion-body editDelete buttons my-0 centrarlo"
+                                                    style=" display: flex;">
+
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button" class="btn botonito"
+                                                        style="filter: hue-rotate(0deg);" (click)="onModal()"
+                                                        *ngIf="!proyectoModalOn">
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        Editar
+                                                    </button>
+
+                                                    <form (ngSubmit)="onDeleteProyecto(proyectoes.id)" novalidate
+                                                        #f="ngForm" *ngIf="!proyectoModalOn">
+                                                        <button type="submit" class="btn botonito"
+                                                            style="filter: hue-rotate(110deg)" [disabled]="!f.valid">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            Borrar
+                                                        </button>
+                                                    </form>
+
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <div role="dialog" id="miModal" class="col" *ngIf="proyectoModalOn">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content text-white fondo-oscuro">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Modificar datos proyecto</h5>
+                                                                <button type="button" class="btn botonito"
+                                                                    (click)="onModalOff()">
+                                                                    <!-- data-bs-dismiss="modal" aria-label="Close" -->
+                                                                    X
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="container">
+
+                                                                    <form (ngSubmit)="onUpdateProj(proyectoes.id)"
+                                                                        novalidate #f="ngForm">
+
+                                                                        <div class="form-group">
+                                                                            <label
+                                                                                for="nombre">Nombre</label>
+                                                                            <input type="text" class="form-control"
+                                                                                id="nombre"
+                                                                                name="nombre"
+                                                                                [(ngModel)]="proyectoes.nombre"
+                                                                                required>
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <label for="informacion">Informacion</label>
+                                                                            <textarea type="text" rows="5" class="form-control"
+                                                                                id="informacion" name="informacion"
+                                                                                [(ngModel)]="proyectoes.informacion"
+                                                                                required></textarea>
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <label for="fecha">Fecha</label>
+                                                                            <input type="date" placeholder="dd/mm/yyyy"
+                                                                                class="form-control" id="fecha"
+                                                                                name="fecha"
+                                                                                [(ngModel)]="proyectoes.fecha"
+                                                                                required>
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <label for="accesoUrl">Acceso Url / Boton</label>
+                                                                            <input type="text" class="form-control"
+                                                                                id="accesoUrl" name="accesoUrl"
+                                                                                [(ngModel)]="proyectoes.accesoUrl">
+                                                                        </div>
+
+                                                                        <button type="submit"
+                                                                            class="btn botonito centrarlo my-2"
+                                                                            style="display: flex; margin:auto; filter: hue-rotate(0deg);"
+                                                                            [disabled]="!f.valid">Guardar
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <app-projs-nuevo></app-projs-nuevo>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- modal in -->
+
+            </div>
+        </div>
+    </div>
+</div>

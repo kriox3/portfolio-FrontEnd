@@ -1,0 +1,62 @@
+<section style="display: block" id="proyectos">
+  <div class="container alert" style="background-color: #ffffff1e; border-radius: 20px" role="alert">
+    <div class="row vh-md-100">
+      <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center" id="cuerpo">
+        <h1 class="heading-black text-light">
+          Proyectos
+        </h1>
+
+        <div class="accordion mx-auto my-3" id="proyectosAcordion">
+
+          <div class="accordion-item" *ngFor="let dato of listaProj let i= index">
+            <div *ngIf="i==0;then seMuestra else noSeMuestra"></div>
+            <ng-template #noSeMuestra>
+              <h2 class="accordion-header" [id]="'heading'+i">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#collapse'+i" aria-expanded="false" [attr.aria-controls]="'collapse'+i">
+                  <b>{{dato.nombre}} <input type="date" disabled class="text-center text-light" style="background: transparent; border: none" placeholder="dd/mm/yyyy" value="{{dato.fecha}}"></b>
+                </button>
+            </h2>
+              <div [id]="'collapse'+i" class="accordion-collapse collapse " [attr.aria-labelledby]="'heading'+i"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{dato.informacion}}
+                <br>
+                <div *ngIf="dato.accesoUrl;then content"></div>
+                <ng-template #content>
+                  <div class="boton my-2" (click)="onNavigate(dato.accesoUrl)">{{dato.nombre}}</div>
+                </ng-template>
+              </div>
+            </div>
+            </ng-template>
+            <ng-template #seMuestra>
+              <h2 class="accordion-header" [id]="'heading'+i">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i">
+                  <b>{{dato.nombre}} <input type="date" disabled class="text-center text-light" style="background: transparent; border: none" placeholder="dd/mm/yyyy" value="{{dato.fecha}}"></b>
+                </button>
+            </h2>
+            <div [id]="'collapse'+i" class="accordion-collapse collapse show" [attr.aria-labelledby]="'heading'+i"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{dato.informacion}}
+                <br>
+                <div *ngIf="dato.accesoUrl;then content"></div>
+                <ng-template #content>
+                  <div class="boton my-2" (click)="onNavigate(dato.accesoUrl)">{{dato.nombre}}</div>
+                </ng-template>
+              </div>
+            </div>
+            </ng-template>
+          </div>
+          
+        </div>
+
+
+      </div>
+
+      <app-projs-listar *ngIf="modifica"></app-projs-listar>
+
+    </div>
+  </div>
+</section>

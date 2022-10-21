@@ -1,0 +1,68 @@
+<button type="button" class="btn botonito mt-3 centrarlo" style="display: flex; margin:auto" (click)="onNewModal()"
+    *ngIf="!experienciaNewModalOn">
+    <!-- data-bs-toggle="modal"
+        data-bs-target="#modelAgregarContacto"> -->
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Agregar más
+</button>
+
+<!-- Modal -->
+<div id="modelAgregarContacto" tabindex="-999" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true"
+    *ngIf="experienciaNewModalOn">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content fondo-oscuro text-light">
+            <div class="modal-header">
+                <h5 class="modal-title text-light">Agregar Experiencia</h5>
+                <button type="button" class="btn botonito" (click)="onNewModalOff()">
+                    <!-- class="btn-close" data-bs-dismiss="modal" aria-label="Close"  -->X
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+
+                    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+
+
+                        <div class="form-group">
+                            <label for="establecimiento">Establecimiento</label>
+                            <input type="text" class="form-control" id="establecimiento" name="establecimiento"
+                                [(ngModel)]="establecimiento" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ocupacion">Ocupacion</label>
+                            <input type="text" class="form-control" id="ocupacion" name="ocupacion" [(ngModel)]="ocupacion"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="desde">Desde</label>
+                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" id="desde" name="desde"
+                                [(ngModel)]="desde" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasta">Hasta</label>
+                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" id="hasta" name="hasta"
+                                [(ngModel)]="hasta" required>
+                        </div>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="actual" name="actual"
+                                [(ngModel)]="actual">
+                            <label class="form-check-label" for="actual">Es Actual</label>
+                        </div>
+
+                        <button type="submit" class="btn botonito centrarlo my-2"
+                            style="display: flex; margin:auto; filter: hue-rotate(0deg);"
+                            [disabled]="!f.valid">Guardar</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
