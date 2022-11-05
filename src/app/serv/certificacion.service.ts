@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { Certificacion } from '../models/certificacion';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Certificacion } from '../models/certificacion';
 })
 export class CertificacionService {
 
-  URL = 'https://kriox3-back-portfolio.herokuapp.com/certificaciones/';
+  URL = environment.servidor+'/certificaciones/';
 
   constructor(private http: HttpClient) { }
 

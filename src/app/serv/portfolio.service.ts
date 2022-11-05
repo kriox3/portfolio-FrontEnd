@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 
 import { Portfolio } from '../models/portfolio';
 
@@ -11,7 +12,7 @@ const cabecera = {headers: new HttpHeaders({'Content-TYpe': 'application/json'})
 })
 export class PortfolioService {
 
-  portfolioURL = 'https://kriox3-back-portfolio.herokuapp.com/portfolio/datos';
+  portfolioURL = environment.servidor+'/portfolio/datos';
 
   constructor(private httpClient:HttpClient) { }
 

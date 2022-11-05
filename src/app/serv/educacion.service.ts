@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { Educacion } from '../models/educacion';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Educacion } from '../models/educacion';
 })
 export class EducacionService {
 
-  URL = 'https://kriox3-back-portfolio.herokuapp.com/educaciones/';
+  URL = environment.servidor+'/educaciones/';
 
   constructor(private http: HttpClient) { }
 
