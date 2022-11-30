@@ -1,8 +1,5 @@
 {
   "projects": {
-    "default": "kriox3-front-portfolio",
-    "portfolio": "kriox3-front-portfolio"
-  },
-  "targets": {},
-  "etags": {}
+    "default": "kriox3-front-portfolio"
+  }
 }
